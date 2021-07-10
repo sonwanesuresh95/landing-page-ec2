@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from requests import get
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-mew$doths4(@2xe#axm1w@x8gf)ipr809fy@6zs-ux(s6z9p#+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','0.0.0.0']
+ALLOWED_HOSTS = ['localhost','0.0.0.0',get('https://api.ipify.org').text]
 
 
 # Application definition
